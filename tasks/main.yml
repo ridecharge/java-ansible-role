@@ -1,3 +1,5 @@
 ---
 - apt_repository: repo='ppa:openjdk-r/ppa' state=present
 - apt: name={{ java_pkg }} state=present
+- name: correct java version selected
+  alternatives: name=java path=/usr/lib/jvm/java-8-openjdk-amd64/jre/bin/java
